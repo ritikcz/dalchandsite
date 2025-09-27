@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mats & GreenGhas — Product Catalog (Demo)</title>
+  <meta name="description" content="Demo product catalog for mats, pairdan and green ghas — responsive, shareable, simple contact links." />
+  <style>
+    :root{--bg:#f7f7f8;--accent:#2b7a78;--accent-2:#17a2b8;--card:#ffffff;--muted:#666}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+    header h1{margin:0;font-size:1.15rem}
+    header p{margin:0;font-size:0.9rem;opacity:0.95}
+    .wrap{max-width:1100px;margin:22px auto;padding:0 18px}
+
+    .hero{background:#fff;border-radius:12px;padding:18px;margin-bottom:18px;display:flex;gap:18px;align-items:center}
+    .hero img{width:160px;height:100px;object-fit:cover;border-radius:8px}
+    .hero .col{flex:1}
+    .hero h2{margin:0 0 6px 0}
+    .controls{display:flex;gap:10px;align-items:center;margin-top:8px}
+    .search{flex:1;display:flex}
+    .search input{width:100%;padding:10px;border-radius:8px;border:1px solid #e2e2e6}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff;font-weight:600}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+
+    .card{background:var(--card);padding:12px;border-radius:10px;border:1px solid #e9e9ee;display:flex;flex-direction:column;gap:8px}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card h3{margin:0;font-size:1.05rem}
+    .price{color:var(--accent);font-weight:700}
+    .desc{color:var(--muted);font-size:0.95rem}
+    .actions{display:flex;gap:8px;margin-top:auto}
+    .actions .btn{background:var(--accent);}
+    .actions .muted{background:#eee;color:#222;padding:8px 12px;border-radius:8px;text-decoration:none}
+
+    footer{margin:28px 0 70px 0;color:#444;text-align:center}
+
+    /* small screens */
+    @media (max-width:600px){
+      header{padding:12px}
+      .hero{flex-direction:column;align-items:flex-start}
+      .hero img{width:100%;height:180px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Mats & GreenGhas</h1>
+      <p>Simple product showcase — demo (replace images & contact details)</p>
+    </div>
+    <div>
+      <a class="btn" href="#contact">Contact Owner</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <img src="https://picsum.photos/seed/mats-hero/800/600" alt="mats hero">
+      <div class="col">
+        <h2>Local mats, pairdan & green ghas — ready to ship</h2>
+        <p class="desc">This is a demo catalog. Replace product images, prices and contacts with real data before sharing with clients.</p>
+        <div class="controls">
+          <div class="search">
+            <input id="search" placeholder="Search product name or description" aria-label="Search products">
+          </div>
+          <a id="shareSite" class="btn" href="#">Share</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin:8px 0">Products</h2>
+      <div id="products" class="grid">
+        <!-- Product 1 -->
+        <article class="card" data-name="Handwoven Mat" data-desc="6x4 ft handwoven natural mat">
+          <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/mat/5/9/1/medium-black-mat-stripes-5p-black-5-ncs-original-imah28sfgxwhqzbx.jpeg?q=70" alt="Handwoven mat">
+          <h3>Handwoven Mat</h3>
+          <div class="price">₹1,200</div>
+          <div class="desc">6 x 4 ft — Natural fibers. Good for indoor use.</div>
+          <div class="actions">
+            <a class="btn" href="tel:+919876543210">Call</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20the%20Handwoven%20Mat">WhatsApp</a>
+            <a class="muted" href="#" data-id="1">Share</a>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="card" data-name="Pairdan Traditional" data-desc="Decorative pairdan for home">
+          <img src="https://rukminim2.flixcart.com/image/612/612/l3929ow0/mat/f/m/h/medium-foot-mat-for-toilet-carpet-bathroom-door-mat-multi-color-original-imagefyduphaqagk.jpeg?q=70" alt="Pairdan">
+          <h3>Pairdan Traditional</h3>
+          <div class="price">₹850</div>
+          <div class="desc">Hand-stitched pairdan — decorative and durable.</div>
+          <div class="actions">
+            <a class="btn" href="tel:+919876543210">Call</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20the%20Pairdan%20Traditional">WhatsApp</a>
+            <a class="muted" href="#" data-id="2">Share</a>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="card" data-name="Green Ghas Roll" data-desc="Eco-friendly grass rolls for landscaping">
+          <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/artificial-turf/q/z/e/45-artificial-turf-1-5-ft-x-2-5-ft-gulistaan-original-imagyyznd8fwtmp9.jpeg?q=70" alt="Green ghas">
+          <h3>Green Ghas Roll</h3>
+          <div class="price">₹520 / meter</div>
+          <div class="desc">Artificial/eco-friendly grass rolls — great for balconies.</div>
+          <div class="actions">
+            <a class="btn" href="tel:+919876543210">Call</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20the%20Green%20Ghas%20Roll">WhatsApp</a>
+            <a class="muted" href="#" data-id="3">Share</a>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="card" data-name="Outdoor Mat XL" data-desc="Water-resistant outdoor mat">
+          <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/mat/m/3/m/medium-high-quality-cusion-mat-red-1-red-cusion-mat-fabmarts-original-imahd9rm2qv4yzyg.jpeg?q=70" alt="Outdoor mat">
+          <h3>Outdoor Mat XL</h3>
+          <div class="price">₹1,650</div>
+          <div class="desc">Water-resistant, easy to clean — 7 x 5 ft.</div>
+          <div class="actions">
+            <a class="btn" href="tel:+919876543210">Call</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20the%20Outdoor%20Mat%20XL">WhatsApp</a>
+            <a class="muted" href="#" data-id="4">Share</a>
+          </div>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="card" data-name="Small Decorative Mat" data-desc="Perfect for tables and small areas">
+          <img src="https://rukminim2.flixcart.com/image/612/612/kxjav0w0/mat/i/g/q/medium-5-cotton-mat-5-999-vrpan-enterprise-original-imag9yuxchpcfyma.jpeg?q=70" alt="Decorative mat">
+          <h3>Small Decorative Mat</h3>
+          <div class="price">₹320</div>
+          <div class="desc">30 x 40 cm — colorful, hand-dyed.</div>
+          <div class="actions">
+            <a class="btn" href="tel:+919876543210">Call</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20the%20Small%20Decorative%20Mat">WhatsApp</a>
+            <a class="muted" href="#" data-id="5">Share</a>
+          </div>
+        </article>
+
+        <!-- Product 6 -->
+        <article class="card" data-name="Eco Mat Set" data-desc="Set of 2 eco-friendly mats">
+          <img src="https://rukminim2.flixcart.com/image/612/612/kve530w0/mat/x/g/u/large-famous-design-01-1-red-01-famous-ncs-original-imag8anzdzmqhxjb.jpeg?q=70" alt="Eco mat set">
+          <h3>Eco Mat Set (2 pcs)</h3>
+          <div class="price">₹2,100</div>
+          <div class="desc">Bundle offer — 2 mats, discounted price.</div>
+          <div class="actions">
+            <a class="btn" href="tel:+919876543210">Call</a>
+            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/919876543210?text=Hello%2C%20I%27m%20interested%20in%20the%20Eco%20Mat%20Set">WhatsApp</a>
+            <a class="muted" href="#" data-id="6">Share</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px;background:#fff;border-radius:12px;padding:14px;border:1px solid #efefef">
+      <h3>Contact Owner</h3>
+      <p class="desc">Replace the details below with real contact info before sharing.</p>
+      <ul>
+        <li><strong>Owner:</strong> DalChand Shrivastva</li>
+        <li><strong>Phone:</strong> <a href="tel:+919837749319">+91 98765 43210</a></li>
+        <li><strong>WhatsApp:</strong> <a target="_blank" rel="noopener" href="https://wa.me/919837749319">Chat on WhatsApp</a></li>
+        <li><strong>Email:</strong> <a href="mailto:matbusiness@order.com">owner@example.com</a></li>
+        <li><strong>Address:</strong> Durga Colony Near Islamnagar bus stand Bahjoi (Sambhal)</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Product site • Built for your quick product showcase.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Search filter
+    const search = document.getElementById('search');
+    const productGrid = document.getElementById('products');
+    const cards = [...productGrid.querySelectorAll('.card')];
+
+    function runFilter() {
+      const q = search.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const name = card.dataset.name.toLowerCase();
+        const desc = card.dataset.desc.toLowerCase();
+        const match = name.includes(q) || desc.includes(q);
+        card.style.display = match ? '' : 'none';
+      });
+    }
+    search.addEventListener('input', runFilter);
+
+    // Share site (copies current url)
+    document.getElementById('shareSite').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const url = location.href.split('#')[0];
+      navigator.clipboard?.writeText(url).then(()=>{
+        alert('Link copied! You can now paste it in WhatsApp or social media.');
+      }).catch(()=>{ prompt('Copy this link', url); });
+    });
+
+    // Share individual product (append ?p=ID)
+    productGrid.addEventListener('click', (e)=>{
+      const share = e.target.closest('[data-id]');
+      if(!share) return;
+      e.preventDefault();
+      const id = share.getAttribute('data-id');
+      const url = location.href.split('#')[0] + '?product=' + encodeURIComponent(id);
+      navigator.clipboard?.writeText(url).then(()=> alert('Product link copied: ' + url)).catch(()=> prompt('Copy product link', url));
+    });
+
+    // Small enhancement: if ?product=ID in URL, scroll to product
+    (function checkProductParam(){
+      try{
+        const params = new URLSearchParams(location.search);
+        const p = params.get('product');
+        if(p){
+          const card = productGrid.querySelector('[data-id="'+p+'"]')?.closest('.card');
+          if(card){ card.scrollIntoView({behavior:'smooth',block:'center'}); card.style.outline = '3px solid rgba(23,162,184,0.25)'; setTimeout(()=>card.style.outline='none',3000); }
+        }
+      }catch(e){/* ignore */}
+    })();
+  </script>
+</body>
+</html>
+
